@@ -13,6 +13,10 @@ gris = (200, 200, 200)
 noir = (0, 0, 0)
 rouge = (255, 0, 0)
 
+# Chargement de l'image de fond
+
+background_image = pygame.image.load("volleyball-2.jpg")
+background_image = pygame.transform.scale(background_image, (1000,1000))
 
 # Créer des boutons
 MoinsGauche = Button(100, 350, 50, 50, gris, gris, rouge, "-", noir)
@@ -145,7 +149,7 @@ while running:
     
 
     # Remplir la fenêtre avec la couleur orange
-    screen.fill(orange)
+    screen.blit(background_image, (0, 0))
 
     # Dessiner les boutons et les zones d'affichage
     MoinsGauche.draw(screen, mouse_pos)
